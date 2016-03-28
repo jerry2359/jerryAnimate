@@ -1,0 +1,14 @@
+{
+  "name": "H5动画框架",
+  "version": "1.0.0",
+  "description": "H5动画框架，一款基于html标签属性来控制动画的框架",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jerry",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+<div id="wrap" class="active">
+    <div class="box box_queue1" data-queue="{'fadeIn':{'startX':'-100%', 'startY':'-100%'}}, {'slide':{'targetY':'100px', 'infinite':true, 'alternate':true, 'function':'linear'}}"></div>
+    <div class="box box2" data-queue="{'slide':{'targetY':'500px'}}, {'slide':{'targetX':'400px', 'startY':'500px'}}, {'slide':{'startX':'400px', 'targetX':'400px', 'targetY':'500px'}}, {'zoomIn':null}" data-callback="true"></div>
+    <div class="box box3" data-animate="{'animation':'fadeIn', 'details':{'targetX':'400px'}}" data-callback="true"></div>
+    <div class="test" ></div>
+</div>
+
+<script src="../js/viewport.js"></script>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/jerryAnimate-v2.0.js" data-autoRender="true"></script>
+<script src="../js/template.js"></script>
+<script>
+    /**
+     * 队列管理
+     * 在很多需求中，需要两个或以上动画才能实现效果，例如进场动画之后就是循环动画，此时需要调用动画框架中的队列管理方能实现效果
+     * 注意事项：
+     * 1、当队列动画和普通动画共存时，只播放队列动画
+     * 2、在动画队列中，当前动画为循环动画时，队列将停留在当前动画，不会进入下一个动画
+     * 3、重置队列动画
+     *      —— 当切换回原来的页面之后，需要重新播放原来的队列动画
+     *      —— 多个单一的动画组合，此时调用重置，可以做成一个循环动画
+     *      —— 调用代码：jerryAnimate().resetQueue('#wrap'); //'#wrap'是选择器 或是 Zepto对象
+     */
+    $('.box_queue1').on('animateCallback', function(ev, index) {
+        //队列序号从0开始算起
+        console.log('box_queue1 队列动画完成，完成当前动画的队列序号：' + index);
+    });
+
+    $('.box2').on('animateCallback', function(ev, index) {
+        //队列序号从0开始算起
+        console.log('box2 队列动画完成，完成当前动画的队列序号：' + index);
+    });
+
+    $('.box3').on('animateCallback', function() {
+        console.log('box3 普通动画完成');
+    });
+
+    setInterval(function() {
+        //重置队列动画
+        jerryAnimate().resetQueue('#wrap');
+    }, 5000);
+</script>
+</body>
+</html>

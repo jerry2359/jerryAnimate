@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+<div id="wrap">
+
+    <div id="area1" class="active">
+        <div class="box" data-animate="{'animation':'fadeIn', 'details':{'targetX':'500px', 'targetY':'500px', 'duration':2000, 'function':'linear', 'infinite':true, 'alternate':true}}"></div>
+        <div class="box" data-animate="{'animation':'slide', 'details':{'targetX':'500px', 'targetY':'500px', 'duration':2000, 'function':'linear', 'infinite':true, 'alternate':true}}"></div>
+        <div class="box" data-animate="{'animation':'slide', 'details':{'startX':'500px', 'targetY':'500px'}}"></div>
+    </div>
+
+    <div id="area2" class="active">
+        <div class="box2" data-animate="{'animation':'fadeIn', 'details':{'startX':'250px', 'targetX':'250px', 'targetY':'500px', 'duration':2000, 'infinite':true}}"></div>
+        <div class="box2" data-animate="{'animation':'fadeInLeft', 'details':{'duration':2000, 'infinite':true, 'alternate':true}}"></div>
+        <div class="box2" data-key="area2-box2"></div>
+    </div>
+
+</div>
+
+<script src="../js/viewport.js"></script>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/jerryAnimate-v2.0.js" data-autoRender="false"></script>
+<script>
+    ;(function() {
+
+        //外部自定义模板扩展
+        jerryAnimate().extendTemplate({
+            'fadeInRight': {
+                'defs': {
+                    'startX': '100%',
+                    'startY': 0,
+                    'startZ': 0,
+                    'targetX': 0,
+                    'targetY': 0,
+                    'targetZ': 0
+                },
+                'style': jerryAnimate.template.fadeIn.style
+            }
+        });
+
+        //动态添加动画数据，并渲染
+        var oBox = $('#area2 .box2').eq(2);
+        oBox.attr('data-animate', "{'animation':'fadeInRight', 'details':{'duration':2000, 'alternate':true}}");
+        jerryAnimate(oBox).render();
+
+        //渲染整个body的动画数据
+        //jerryAnimate('body').render();
+
+        //只渲染 id为 area1 的动画数据
+        jerryAnimate('#area1').render();
+        setTimeout(function() {
+            //等待2秒后 再渲染 id为 area2 的动画数据
+            jerryAnimate('#area2').render();
+        }, 2000);
+
+    })();
+</script>
+</body>
+</html>

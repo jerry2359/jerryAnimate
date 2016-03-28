@@ -1,0 +1,65 @@
+html,body { width:100%; height:100%; position: relative; overflow: hidden;}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,menu,nav,output,ruby,section,summary,time,mark,audio,video,p{margin:0;padding:0;border:0;vertical-align:baseline;}
+
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,footer,header,menu,nav,section{display:block;}
+body{line-height:1.2;font-size:28px;font-family:"微软雅黑","黑体",Verdana,Arial,Helvetica,sans-serif;margin:0 auto; color: #feed93; background-color: #000;}
+ol,ul{list-style:none;}
+a{text-decoration:none;color: #feed93;}
+a:hover{color: #feed93;}
+img{border:0px;vertical-align:middle;}
+em{ font-style: normal;}
+input,button,select,textarea{outline:none}
+
+/*基本的动画设置*/
+.box, .box2 {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    background-color: #f00;
+}
+.box2 {
+    background-color: #fff000;
+}
+
+.box_queue1 {
+    position: absolute;
+    top: 300px;
+    left: 250px;
+}
+
+#area2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*
+@-webkit-keyframes slide {
+    0% {
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+    100% {
+        -webkit-transform: translate3d(200px,500px,0);
+        transform: translate3d(200px,500px,0);
+    }
+}
+@keyframes slide {
+    0% {
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+    100% {
+        -webkit-transform: translate3d(200px,500px,0);
+        transform: translate3d(200px,500px,0);
+    }
+}
+.active>.slide {
+    -webkit-animation-name: slide;
+    animation-name: slide;
+}*/
