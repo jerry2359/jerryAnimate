@@ -21,7 +21,7 @@ jerryAnimate 为H5动画而生
 
 ```html
 <div id="area1" class="active">
-    <div class="box" data-animate="{'animation':'slide', 'details':{'startX':'500px', 'targetY':'500px'}}"></div>
+    <div class="box" data-animate="{'animation':'slide', 'details':{'startX':'500px', 'targetY':'500px'}}" data-callback="true"></div>
 </div>
 ```
 
@@ -70,7 +70,7 @@ jerryAnimate(oBox);
 
 #### 注意事项
 1、当队列动画（`data-queue`）和普通动画（`data-animate`）共存时，只播放队列动画。<br>
-2、在动画队列中，当前动画为循环动画时，队列将停留在当前动画，不会进入下一个动画。
+2、在队列动画中，当前动画为循环动画时，队列将停留在当前动画，不会进入下一个动画。
 
 #### 调用代码
 ```html
@@ -107,7 +107,14 @@ jerryAnimate().resetQueue('#wrap'); //'#wrap'是选择器 或是 Zepto对象
 显然，框架中内置的两个动画模板是不能满足开发需求的。<br>
 在实际的开发中，可能需要更多的动画模板。此处不希望所有的模板都放在框架内，有些模板并不是所有项目都需要的，也不希望框架因此变得冗长难以维护。所以，框架对外提供了模板的扩展方法。<br>
 模板的扩展分以下两种情况：
-1、引入`template.js`，此脚本中提供了项目中比较常用的模板。注：建议对比较常用的模板可以收集在此文件中，方便下次开发直接使用。
+1、引入`template.js`，此脚本中提供了项目中比较常用的模板。注：建议对比较常用的模板可以收藏在此文件中，方便下次开发直接使用。
+
+```html
+<script src="../js/zepto.min.js"></script>
+<script src="../js/jerryAnimate-v2.0.js" data-autoRender="true"></script>
+<script src="../js/template.js"></script>
+```
+
 2、外部模板扩展。即该模板不在框架内，也不在`template.js`里面。好处是该模板只是在该项目中被大量使用，而不会污染`template.js`。代码如下：
 
 ```js
