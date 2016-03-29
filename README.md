@@ -1,4 +1,4 @@
-jerryAnimate，为H5动画而生
+`jerryAnimate`为H5动画而生
 ====
 
 ## 灵感来源
