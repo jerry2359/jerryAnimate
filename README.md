@@ -28,7 +28,7 @@ jerryAnimate 为H5动画而生
 可以看到以上代码中，标签`data-animate`所装载的就是动画数据。其中，`slide`是动画模板的名称；`details`里面是对该动画模板的参数设置。
 有关动画模板会在下方做详细解释。
 
-动画的回调
+动画的回调<br>
 注：回调功能必须用 `data-callback="true"`开启；循环动画将不会抛出回调事件
 ```js
 $('.box').on('animateCallback', function() {
