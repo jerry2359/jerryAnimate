@@ -152,8 +152,17 @@ jerryAnimate().extendTemplate({
 #### 模板的制作
 学会模板的制作，对开发的帮助非常大，同时也能帮助加深对框架的理解。<br>
 看到这里，大家可能会对模板的制作非常感兴趣，下面说一下模板是怎么制作的。
+模板的格式：
+如上述代码，`jerryAnimate().extendTemplate`是扩展模板的方法，传入一个json参数。这个参数里面包含的数据就是模板，可以有多个模板数据。
+`fadeInRight`就是模板的名称，它映射一个json对象。<br>
+`defs`是该模板的默认配置参数，用户可在调用模板的时候修改这些配置，实例如下：
 
+```html
+<div class="box" data-animate="{'animation':'slide', 'details':{'startX':'500px', 'targetY':'500px'}}"></div>
+```
 
+可在`details`里面去修改这些配置参数。<br>
+`style`是模板的`animation`模块，写法跟写css差不多，只是需要注意换行格式`\n\`和`#配置参数#`。
 
 
 
