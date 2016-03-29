@@ -1,0 +1,12 @@
+# 屏蔽webstorm文件
+/.idea/*
+
+# 屏蔽gulp的配置文件
+/node_modules/*
+/zips/*
+/config.json
+# /gulpfile.js
+# /package.json
+
+# 屏蔽该文件本身
+#*.gitignore

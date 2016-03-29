@@ -48,16 +48,16 @@
         //动态添加动画数据，并渲染
         var oBox = $('#area2 .box2').eq(2);
         oBox.attr('data-animate', "{'animation':'fadeInRight', 'details':{'duration':2000, 'alternate':true}}");
-        jerryAnimate(oBox).render();
+        jerryAnimate(oBox);
 
         //渲染整个body的动画数据
-        //jerryAnimate('body').render();
+        //jerryAnimate('body');
 
         //只渲染 id为 area1 的动画数据
-        jerryAnimate('#area1').render();
+        jerryAnimate('#area1');
         setTimeout(function() {
             //等待2秒后 再渲染 id为 area2 的动画数据
-            jerryAnimate('#area2').render();
+            jerryAnimate('#area2');
         }, 2000);
 
     })();
