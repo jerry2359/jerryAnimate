@@ -40,7 +40,7 @@ $('.box').on('animateCallback', function() {
 框架会获取标签里的动画属性来动态生成css3的animation，当生成完毕之后，再把其样式加到该节点上。
 框架提供了三种渲染方式：
 
-1、自动渲染。`data-autoRender="true"`，默认为`false`；开启之后，DOM在抛出ready事件时会自动渲染所有动画数据。
+1、自动渲染。`data-autoRender="true"`，默认为`false`；开启之后，DOM在抛出`ready`事件时会自动渲染所有动画数据。
 
 ```html
 <script src="../js/jerryAnimate-v2.0.js" data-autoRender="true"></script>
